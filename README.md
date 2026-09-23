@@ -518,7 +518,7 @@ All of these endpoints require JWT Bearer Authentication.
 | `GET`    | `/url/get-url/{id}`    | Get a specific URL                     |
 | `PUT`    | `/url/update-url`      | Update a URL and/or its rate limits    |
 | `DELETE` | `/url/delete-url/{id}` | Delete a URL                           |
-| `GET`    | `/index`               | Application endpoint                   |
+| `GET`    | `/index`               | Application Greeting                   |
 
 ---
 
@@ -557,9 +557,8 @@ Location: https://example.com
 | **PostgreSQL**           | Persistent data storage                  |
 | **Hibernate / JPA**      | ORM and database interaction             |
 | **Maven**                | Build and dependency management          |
-| **JWT**                  | Authentication                           |
+| **JJWT**                 | Authentication                           |
 | **Git / GitHub**         | Version control                          |
-| **hey**                  | Load testing                             |
 
 ---
 
@@ -909,8 +908,6 @@ The primary objective is to understand how **authentication, persistence, cachin
 **Rohit Chaudhury**
 
 Backend Developer | Java | Spring Boot | Redis | PostgreSQL
-
-Silk-URL is a personal backend engineering project focused on scalable application architecture, distributed rate limiting, high-throughput request handling, caching, and modern Java/Spring backend development.
 
 ## 📄 License
 
