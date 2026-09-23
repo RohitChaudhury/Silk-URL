@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: short-url-service
+              uri: http://localhost:8000
+              predicates:
+                - Path=/**
+              filters:
+                - name: RequestRateLimiter
+                  args:
+                    key-resolver: "#{@globalKeyResolver}"
+                    redis-rate-limiter.replenishRate: 100000
+                    redis-rate-limiter.burstCapacity: 100000
+                    redis-rate-limiter.requestedTokens: 1
