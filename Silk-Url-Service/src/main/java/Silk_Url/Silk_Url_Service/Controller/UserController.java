@@ -14,7 +14,7 @@ import Silk_Url.Silk_Url_Service.Model.Response.Response;
 import Silk_Url.Silk_Url_Service.Service.Entity.UserService;
 import Silk_Url.Silk_Url_Service.Service.Response.ResponseBuilderService;
 
-@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+@CrossOrigin(origins = "http://localhost:3000/", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
         RequestMethod.DELETE })
 @RestController
 @RequestMapping(value = "/user")
