@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Silk_Url.Silk_Url_Service.Service.Entity.AccessUrlService;
 import jakarta.servlet.http.HttpServletRequest;
 
-@CrossOrigin(origins = "http://localhost:3000/", methods = { RequestMethod.GET })
+@CrossOrigin(origins = "http://127.0.0.1:3000/", methods = { RequestMethod.GET })
 @RestController
 @RequestMapping(value = "/")
 public class AccessUrlController {
