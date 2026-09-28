@@ -23,7 +23,7 @@ import Silk_Url.Silk_Url_Service.Model.Response.Response;
 import Silk_Url.Silk_Url_Service.Service.Entity.GenerateUrlService;
 import Silk_Url.Silk_Url_Service.Service.Response.ResponseBuilderService;
 
-@CrossOrigin(origins = "http://localhost:3000", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
         RequestMethod.DELETE })
 @RestController
 @RequestMapping(value = "/url")

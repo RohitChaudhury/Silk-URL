@@ -515,22 +515,20 @@ curl -X DELETE "http://localhost:3000/url/delete-url/2" \
 
 # 6. Application Greeting Endpoint
 
-Provides a basic Hello to the Application to test the Application is running Successfully
+Provides a basic greeting to the user, to test the user's successfull access to the endpoints.
 
 ### Endpoint
 
 ```http
-GET /index
+GET /url/index
 ```
 
 ### Authentication
 
-No Authentication
-
-### Example
+**Required**
 
 ```http
-GET /index
+Authorization: Bearer <JWT_TOKEN>
 ```
 
 ---
