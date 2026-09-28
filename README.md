@@ -518,7 +518,7 @@ All of these endpoints require JWT Bearer Authentication.
 | `GET`    | `/url/get-url/{id}`    | Get a specific URL                     |
 | `PUT`    | `/url/update-url`      | Update a URL and/or its rate limits    |
 | `DELETE` | `/url/delete-url/{id}` | Delete a URL                           |
-| `GET`    | `/index`               | Application Greeting                   |
+| `GET`    | `url/index`            | Application Greeting                   |
 
 ---
 
