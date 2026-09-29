@@ -115,18 +115,6 @@ public class BaseUrlService {
         return urlRepo.findUrlById(id);
     }
 
-    // get the next Entity Id of the last entry in DB
-    public long getCurrentEntityDbId() {
-        Urls url = urlRepo.getLastRowData();
-        long id = 1L;
-
-        if (url != null && !url.getShortKey().isBlank()) {
-            id = url.getId() + 1L;
-        }
-
-        return id;
-    }
-
     // method to generate a short Url
     public String generateKey(long id) {
         return Base62.encode(id);
@@ -134,7 +122,7 @@ public class BaseUrlService {
 
     // Save data in Db
     public Urls addUrlInDb(Urls url) {
-        return urlRepo.save(url);
+        return urlRepo.saveAndFlush(url);
     }
 
     // method to validate Native Url

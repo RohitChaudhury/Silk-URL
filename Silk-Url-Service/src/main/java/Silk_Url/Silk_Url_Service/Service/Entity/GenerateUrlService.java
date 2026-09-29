@@ -10,6 +10,7 @@ import Silk_Url.Silk_Url_Service.Model.Dto.UrlDto;
 import Silk_Url.Silk_Url_Service.Model.Entity.Urls;
 import Silk_Url.Silk_Url_Service.Model.Entity.Users;
 import Silk_Url.Silk_Url_Service.Service.Entity.BaseService.BaseUrlService;
+import jakarta.transaction.Transactional;
 
 @Service
 public class GenerateUrlService {
@@ -92,16 +93,12 @@ public class GenerateUrlService {
     }
 
     // method to create a short URL from the long URL called by Controller
+    @Transactional
     public UrlDto createUrl(Urls url) {
         try {
             Users user = baseService.getAuthenticatedUser();
             url.setUserId(user.getId()); // set user id in Url entity
-
-            // Generate Key -
-            long lastId = baseService.getCurrentEntityDbId();
-            String key = baseService.generateKey(lastId);
-
-            url.setShortKey(key); // set shortkey in Url entity
+            url.setShortKey("");
 
             // set the rateLimit to 60 per minute to Ip by default
             if (url.getIpAddressTokens() <= 0)
@@ -111,7 +108,16 @@ public class GenerateUrlService {
             if (url.getUrlTokens() <= 0)
                 url.setUrlTokens(50000);
 
-            baseService.addUrlInDb(url);
+            Urls newUrl = baseService.addUrlInDb(url);
+            // Generate Key -
+            long entityId = newUrl.getId();
+            String key = baseService.generateKey(entityId); // the new Id for the Url entity
+
+            newUrl.setShortKey(key); // set the generated ShortKey of the id
+
+            // update the db with the shortKey
+            baseService.updateUrlById(newUrl);
+
             this.performCacheOperationsOnUrlCreate(user.getId(), url); // perform cache operations when url is
                                                                        // created
 
