@@ -10,6 +10,12 @@ The project focuses on backend engineering concepts such as **high-throughput re
 
 ---
 
+## Public URL Access:
+
+Silk-Url is deployed and is accessible through HTTPS using the following Base URL:
+Base URL: https://98.130.15.20/
+All publicly accessible API endpoints should be constructed relative to this Base URL.
+
 ## 📌 Overview
 
 Silk-URL is divided into two primary services:

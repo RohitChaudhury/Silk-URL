@@ -43,12 +43,20 @@ http://localhost:3000
 
 The Gateway acts as the entry point to the application and provides global traffic protection before requests reach the core Silk-URL application.
 
-For a deployed environment, replace the base URL with the application's public API domain.
+And for the Service URL -
+
+```text
+http://localhost:8000
+```
+
+Silk-Url is deployed and is accessible through HTTPS using the following
+Base URL: https://98.130.15.20/
+All publicly accessible API endpoints should be constructed relative to this Base URL.
 
 Throughout this documentation:
 
 ```text
-BASE_URL = http://localhost:8000
+BASE_URL = http://localhost:3000
 ```
 
 ---
