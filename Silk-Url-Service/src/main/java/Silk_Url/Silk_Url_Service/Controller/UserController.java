@@ -2,11 +2,9 @@ package Silk_Url.Silk_Url_Service.Controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import Silk_Url.Silk_Url_Service.Model.Entity.Users;
@@ -14,8 +12,6 @@ import Silk_Url.Silk_Url_Service.Model.Response.Response;
 import Silk_Url.Silk_Url_Service.Service.Entity.UserService;
 import Silk_Url.Silk_Url_Service.Service.Response.ResponseBuilderService;
 
-@CrossOrigin(origins = "http://127.0.0.1:3000/", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
-        RequestMethod.DELETE })
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
